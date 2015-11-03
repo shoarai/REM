@@ -1,0 +1,29 @@
+<div>
+  <h2>{{currentPoint}}</h2>
+
+  <div id="board" class="card" ng-show="isShowBoard" board>
+    <div class="row">
+      <div class="col"><button class="button circle"></button></div>
+      <div class="col"><button class="button circle"></button></div>
+      <div class="col"><button class="button circle"></button></div>
+    </div>
+    <div class="row">
+      <div class="col"><button class="button circle"></button></div>
+      <div class="col"><button class="button circle"></button></div>
+      <div class="col"><button class="button circle"></button></div>
+    </div>
+    <div class="row">
+      <div class="col"><button class="button circle"></button></div>
+      <div class="col"><button class="button circle"></button></div>
+      <div class="col"><button class="button circle"></button></div>
+    </div>
+  </div>
+
+  <div ng-show="isShowEnd">
+    <p>失敗！</p>
+    <div class="button-bar">
+      <a class="button" ui-sref="board">もう一度</a>
+      <a class="button" ui-sref="index">メニューに戻る</a>
+    </div>
+  </div>
+</div>
