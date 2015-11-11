@@ -8,7 +8,14 @@ angular.module('starter.controllers', [])
   $scope.isShowBoard = true;
   $scope.isShowEnd = false;
 
+  var preCount = 2;
+
   var countId = $interval(function() {
+    if ($scope.isShowBoard && preCount > 0) {
+      preCount--;
+      $scope.isCorrect = true;
+    }
+
     if ($scope.isShowBoard && !$scope.isCorrect) {
       $scope.currentCount--;
       if ($scope.currentCount <= 0) {

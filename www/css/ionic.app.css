@@ -9081,3 +9081,31 @@ a.button {
   opacity: 0;
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
+
+body {
+  text-align: center; }
+
+#menu_title {
+  margin-top: 100px; }
+
+#count_down {
+  font-size: 100px;
+  margin-top: 300px; }
+
+#board {
+  width: 300px;
+  margin: 20px auto;
+  -webkit-transition: all linear 0.5s;
+  -moz-transition: all linear 0.5s;
+  -o-transition: all linear 0.5s;
+  transition: all linear 0.5s; }
+  #board .col {
+    padding: 8px 5px; }
+  #board.ng-hide-add-active {
+    margin-top: -400px; }
+
+.circle {
+  height: 80px;
+  width: 80px;
+  margin: 0;
+  padding: 0; }

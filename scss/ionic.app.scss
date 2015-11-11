@@ -20,3 +20,53 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
+
+
+body {
+  text-align: center;
+}
+
+
+// Menu
+#menu_title {
+  margin-top: 100px;
+}
+
+// Count down
+#count_down {
+  font-size: 100px;
+  margin-top: 300px;
+}
+
+// board
+#board {
+  // display: table-cell;
+  width: 300px;
+  margin: 20px auto;
+
+  .col {
+    padding: 8px 5px;
+  }
+
+  .checked {
+    
+  }
+
+  -webkit-transition:all linear 0.5s;
+  -moz-transition:all linear 0.5s;
+  -o-transition:all linear 0.5s;
+  transition:all linear 0.5s;
+
+  &.ng-hide-add-active {
+    // width: 0px;
+    // height: 0px;
+    margin-top: -400px;
+  }
+}
+
+.circle {
+  height: 80px;
+  width: 80px;
+  margin: 0;
+  padding: 0;
+}

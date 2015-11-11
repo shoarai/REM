@@ -25,11 +25,10 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     .state('index', {
       url: '/',
       templateUrl: 'templates/menu.html',
-      // controller: 'BoardCtrl'
     })
     .state('board', {
       url: '/board',
-      template: '<p>{{countDown}}</p>',
+      template: '<p id="count_down">{{countDown}}</p>',
       controller: function($scope, $interval, $state) {
         $scope.countDown = 3;
         var countId = $interval(function() {
@@ -38,7 +37,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
             $state.go('showing');
           }
           $scope.countDown--;
-        }, 800);
+        }, 600);
       }
     })
     .state('showing', {
