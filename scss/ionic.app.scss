@@ -43,13 +43,14 @@ body {
   // display: table-cell;
   width: 300px;
   margin: 20px auto;
+  background-color: #000;
 
   .col {
     padding: 8px 5px;
   }
 
-  .checked {
-    
+  &.checked {
+    background-color: #ddd;
   }
 
   -webkit-transition:all linear 0.5s;
@@ -60,7 +61,7 @@ body {
   &.ng-hide-add-active {
     // width: 0px;
     // height: 0px;
-    margin-top: -400px;
+    // margin-top: -400px;
   }
 }
 

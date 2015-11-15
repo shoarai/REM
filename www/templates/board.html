@@ -1,7 +1,7 @@
 <div id="board_area">
   <h2>{{currentPoint}}</h2>
 
-  <div id="board" class="card" ng-class="(isCorrect==true)? 'checked':'test'" ng-show="isShowBoard" board>
+  <div id="board" class="card" ng-class="{'checked': preCount > 0}" ng-show="isShowBoard" board>
     <div class="row">
       <div class="col"><button class="button circle"></button></div>
       <div class="col"><button class="button circle"></button></div>

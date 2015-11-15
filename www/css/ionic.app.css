@@ -9095,14 +9095,15 @@ body {
 #board {
   width: 300px;
   margin: 20px auto;
+  background-color: #000;
   -webkit-transition: all linear 0.5s;
   -moz-transition: all linear 0.5s;
   -o-transition: all linear 0.5s;
   transition: all linear 0.5s; }
   #board .col {
     padding: 8px 5px; }
-  #board.ng-hide-add-active {
-    margin-top: -400px; }
+  #board.checked {
+    background-color: #ddd; }
 
 .circle {
   height: 80px;
