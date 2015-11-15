@@ -25,6 +25,13 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     .state('index', {
       url: '/',
       templateUrl: 'templates/menu.html',
+      controller: function($scope, $state) {
+        $scope.level = 1;
+
+        $scope.onclickStart = function() {
+          $state.go('showing', {waitCount: $scope.level});
+        }
+      }
     })
     .state('board', {
       url: '/board',
@@ -34,6 +41,8 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         var countId = $interval(function() {
           if ($scope.countDown <= 1) {
             $interval.cancel(countId);
+            // var waitCount = 3
+            // $state.go('showing', {waitCount: waitCount});
             $state.go('showing');
           }
           $scope.countDown--;
@@ -41,13 +50,8 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
     })
     .state('showing', {
-      url: '/showing',
+      url: '/showing:waitCount',
       templateUrl: 'templates/board.html',
-      controller: 'BoardCtrl'
-    })
-    .state('end', {
-      url: '/end',
-      templateUrl: 'templates/menu.html',
       controller: 'BoardCtrl'
     });
 

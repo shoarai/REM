@@ -1,4 +1,12 @@
 
 
 <h1 id="menu_title">REM</h1>
-<button class="button button-assertive" ui-sref="board">はじめる</button>
+
+<!-- <button class="button button-assertive" ui-sref="showing({waitCount:{{level}}})">はじめる</button> -->
+<button class="button button-assertive" ng-click="onclickStart()">はじめる</button>
+
+<div class="item range range-positive">
+  <span>Level</span>
+  <input type="range" name="volume" min="0" max="3" value="1" ng-model="level">
+  <span>{{level}}</span>
+</div>

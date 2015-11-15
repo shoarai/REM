@@ -1,7 +1,9 @@
 angular.module('starter.controllers', [])
 
 .controller('BoardCtrl', function($scope, $stateParams, $interval) {
-  $scope.preCount = 3;
+  console.log($stateParams);
+
+  $scope.preCount = $stateParams.waitCount | 0;
 
   $scope.currentPoint = 0;
   $scope.currentCount = 1;
@@ -58,9 +60,9 @@ angular.module('starter.controllers', [])
             return;
           }
           scope.currentIndex = scope.indexQue.shift();
-          console.log(scope.indexQue, scope.currentIndex);
+          // console.log(scope.indexQue, scope.currentIndex);
           angular.element(elem.find('button')[scope.currentIndex]).addClass('lightCircle');
-          console.log(num, scope.currentIndex);
+          // console.log(num, scope.currentIndex);
         } else {
           var buttons = angular.element(elem.find('button'));
           buttons.text('');
