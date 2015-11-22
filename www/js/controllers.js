@@ -1,7 +1,8 @@
 angular.module('starter.controllers', [])
 
-.controller('BoardCtrl', function($scope, $stateParams, $interval) {
+.controller('BoardCtrl', function($scope, $stateParams, $interval, $state) {
   console.log($stateParams);
+  var waitCount = $stateParams.waitCount | 0;
 
   $scope.preCount = $stateParams.waitCount | 0;
 
@@ -38,6 +39,11 @@ angular.module('starter.controllers', [])
       $scope.isShowEnd = true;
     }
   });
+
+  $scope.onclickRestart = function() {
+    $state.reload();
+    // $state.go('showing', {waitCount: waitCount});
+  }
 })
 
 .directive('board', function() {

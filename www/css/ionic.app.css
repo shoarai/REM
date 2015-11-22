@@ -9102,8 +9102,6 @@ body {
   transition: all linear 0.5s; }
   #board .col {
     padding: 8px 5px; }
-  #board.checked {
-    background-color: #ddd; }
 
 .circle {
   height: 80px;
