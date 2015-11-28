@@ -40,6 +40,14 @@ body {
 
 #board_area {
   padding: 20px 0 0 0;
+
+  h2 {
+    margin: 0;
+  }
+
+  p {
+    font-size: 20px;
+  }
 }
 
 // board
@@ -59,12 +67,25 @@ body {
     margin: 0;
     padding: 0;
 
+    // -webkit-transition:all linear 0.5s;
+    // -moz-transition:all linear 0.5s;
+    // -o-transition:all linear 0.5s;
+    transition:all linear 0.1s;
+
     &.current {
       @extend .button-assertive;
     }
 
     &.correct {
-      @extend .button-energized;
+      // @extend .button-energized;
+    }
+
+    &.selected {
+      @extend .button-positive;
+
+      &.correct {
+        @extend .button-energized;
+      }
     }
   }
 

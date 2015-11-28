@@ -7976,30 +7976,30 @@ progress {
         background-color: #b2b2b2;
         box-shadow: none;
         color: #fff; }
-  .button.button-positive {
+  .button.button-positive, #board .button.cell.selected {
     border-color: #0c60ee;
     background-color: #387ef5;
     color: #fff; }
-    .button.button-positive:hover {
+    .button.button-positive:hover, #board .button.cell.selected:hover {
       color: #fff;
       text-decoration: none; }
-    .button.button-positive.active, .button.button-positive.activated {
+    .button.button-positive.active, #board .button.active.cell.selected, .button.button-positive.activated, #board .button.activated.cell.selected {
       border-color: #0c60ee;
       background-color: #0c60ee;
       box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.1); }
-    .button.button-positive.button-clear {
+    .button.button-positive.button-clear, #board .button.button-clear.cell.selected {
       border-color: transparent;
       background: none;
       box-shadow: none;
       color: #387ef5; }
-    .button.button-positive.button-icon {
+    .button.button-positive.button-icon, #board .button.button-icon.cell.selected {
       border-color: transparent;
       background: none; }
-    .button.button-positive.button-outline {
+    .button.button-positive.button-outline, #board .button.button-outline.cell.selected {
       border-color: #387ef5;
       background: transparent;
       color: #387ef5; }
-      .button.button-positive.button-outline.active, .button.button-positive.button-outline.activated {
+      .button.button-positive.button-outline.active, #board .button.button-outline.active.cell.selected, .button.button-positive.button-outline.activated, #board .button.button-outline.activated.cell.selected {
         background-color: #387ef5;
         box-shadow: none;
         color: #fff; }
@@ -8084,30 +8084,30 @@ progress {
         background-color: #33cd5f;
         box-shadow: none;
         color: #fff; }
-  .button.button-energized, #board .button.cell.correct {
+  .button.button-energized, #board .button.cell.selected.correct {
     border-color: #e6b500;
     background-color: #ffc900;
     color: #fff; }
-    .button.button-energized:hover, #board .button.cell.correct:hover {
+    .button.button-energized:hover, #board .button.cell.selected.correct:hover {
       color: #fff;
       text-decoration: none; }
-    .button.button-energized.active, #board .button.active.cell.correct, .button.button-energized.activated, #board .button.activated.cell.correct {
+    .button.button-energized.active, #board .button.active.cell.selected.correct, .button.button-energized.activated, #board .button.activated.cell.selected.correct {
       border-color: #e6b500;
       background-color: #e6b500;
       box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.1); }
-    .button.button-energized.button-clear, #board .button.button-clear.cell.correct {
+    .button.button-energized.button-clear, #board .button.button-clear.cell.selected.correct {
       border-color: transparent;
       background: none;
       box-shadow: none;
       color: #ffc900; }
-    .button.button-energized.button-icon, #board .button.button-icon.cell.correct {
+    .button.button-energized.button-icon, #board .button.button-icon.cell.selected.correct {
       border-color: transparent;
       background: none; }
-    .button.button-energized.button-outline, #board .button.button-outline.cell.correct {
+    .button.button-energized.button-outline, #board .button.button-outline.cell.selected.correct {
       border-color: #ffc900;
       background: transparent;
       color: #ffc900; }
-      .button.button-energized.button-outline.active, #board .button.button-outline.active.cell.correct, .button.button-energized.button-outline.activated, #board .button.button-outline.activated.cell.correct {
+      .button.button-energized.button-outline.active, #board .button.button-outline.active.cell.selected.correct, .button.button-energized.button-outline.activated, #board .button.button-outline.activated.cell.selected.correct {
         background-color: #ffc900;
         box-shadow: none;
         color: #fff; }
@@ -9094,6 +9094,10 @@ body {
 
 #board_area {
   padding: 20px 0 0 0; }
+  #board_area h2 {
+    margin: 0; }
+  #board_area p {
+    font-size: 20px; }
 
 #board {
   width: 300px;
@@ -9105,4 +9109,5 @@ body {
     height: 80px;
     width: 80px;
     margin: 0;
-    padding: 0; }
+    padding: 0;
+    transition: all linear 0.1s; }

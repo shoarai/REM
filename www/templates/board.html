@@ -1,6 +1,8 @@
 <div id="board_area">
+  <h2 ng-hide="waitCount>0">Point</h2>
   <h2 ng-hide="waitCount>0">{{point}}</h2>
-  <h2 ng-show="waitCount>0">Remember</h2>
+  <h2 ng-show="waitCount>0">Wait</h2>
+  <h2 ng-show="waitCount>0">{{waitCount}}</h2>
 
   <div id="board" class="card" board>
     <div class="row">
@@ -21,7 +23,7 @@
   </div>
 
   <div ng-show="isEnd">
-    <p>失敗！</p>
+    <p>Game Over</p>
     <div class="button-bar">
       <a class="button button-clear button-assertive" ng-click="onclickRestart()">もう一度</a>
       <a class="button button-clear button-positive" ui-sref="index">メニューに戻る</a>
