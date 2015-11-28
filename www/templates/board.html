@@ -1,29 +1,29 @@
 <div id="board_area">
-  <h2>{{currentPoint}}</h2>
+  <h2 ng-hide="waitCount>0">{{point}}</h2>
+  <h2 ng-show="waitCount>0">Remember</h2>
 
-  <div id="board" class="card" ng-class="{'checked': preCount > 0}" ng-show="isShowBoard" board>
+  <div id="board" class="card" board>
     <div class="row">
-      <div class="col"><button class="button circle"></button></div>
-      <div class="col"><button class="button circle"></button></div>
-      <div class="col"><button class="button circle"></button></div>
+      <div class="col"><button class="button cell" ng-click="onclickCell(0)"></button></div>
+      <div class="col"><button class="button cell" ng-click="onclickCell(1)"></button></div>
+      <div class="col"><button class="button cell" ng-click="onclickCell(2)"></button></div>
     </div>
     <div class="row">
-      <div class="col"><button class="button circle"></button></div>
-      <div class="col"><button class="button circle"></button></div>
-      <div class="col"><button class="button circle"></button></div>
+      <div class="col"><button class="button cell" ng-click="onclickCell(3)"></button></div>
+      <div class="col"><button class="button cell" ng-click="onclickCell(4)"></button></div>
+      <div class="col"><button class="button cell" ng-click="onclickCell(5)"></button></div>
     </div>
     <div class="row">
-      <div class="col"><button class="button circle"></button></div>
-      <div class="col"><button class="button circle"></button></div>
-      <div class="col"><button class="button circle"></button></div>
+      <div class="col"><button class="button cell" ng-click="onclickCell(6)"></button></div>
+      <div class="col"><button class="button cell" ng-click="onclickCell(7)"></button></div>
+      <div class="col"><button class="button cell" ng-click="onclickCell(8)"></button></div>
     </div>
   </div>
 
-  <div ng-show="isShowEnd">
+  <div ng-show="isEnd">
     <p>失敗！</p>
     <div class="button-bar">
       <a class="button button-clear button-assertive" ng-click="onclickRestart()">もう一度</a>
-
       <a class="button button-clear button-positive" ui-sref="index">メニューに戻る</a>
     </div>
   </div>

@@ -38,6 +38,10 @@ body {
   margin-top: 300px;
 }
 
+#board_area {
+  padding: 20px 0 0 0;
+}
+
 // board
 #board {
   // display: table-cell;
@@ -49,25 +53,33 @@ body {
     padding: 8px 5px;
   }
 
-  &.checked {
-    // background-color: #ddd;
+  .cell {
+    height: 80px;
+    width: 80px;
+    margin: 0;
+    padding: 0;
+
+    &.current {
+      @extend .button-assertive;
+    }
+
+    &.correct {
+      @extend .button-energized;
+    }
   }
 
-  -webkit-transition:all linear 0.5s;
-  -moz-transition:all linear 0.5s;
-  -o-transition:all linear 0.5s;
-  transition:all linear 0.5s;
+  // &.checked {
+  //   background-color: #ddd;
+  // }
 
-  &.ng-hide-add-active {
+  // -webkit-transition:all linear 0.5s;
+  // -moz-transition:all linear 0.5s;
+  // -o-transition:all linear 0.5s;
+  // transition:all linear 0.5s;
+
+  // &.ng-hide-add-active {
     // width: 0px;
     // height: 0px;
     // margin-top: -400px;
-  }
-}
-
-.circle {
-  height: 80px;
-  width: 80px;
-  margin: 0;
-  padding: 0;
+  // }
 }

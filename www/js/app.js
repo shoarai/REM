@@ -26,7 +26,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       url: '/',
       templateUrl: 'templates/menu.html',
       controller: function($scope, $state) {
-        $scope.level = 1;
+        $scope.level = 2;
 
         $scope.onclickStart = function() {
           $state.go('showing', {waitCount: $scope.level});

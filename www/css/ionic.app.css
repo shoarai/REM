@@ -8030,30 +8030,30 @@ progress {
         background-color: #11c1f3;
         box-shadow: none;
         color: #fff; }
-  .button.button-assertive {
+  .button.button-assertive, #board .button.cell.current {
     border-color: #e42112;
     background-color: #ef473a;
     color: #fff; }
-    .button.button-assertive:hover {
+    .button.button-assertive:hover, #board .button.cell.current:hover {
       color: #fff;
       text-decoration: none; }
-    .button.button-assertive.active, .button.button-assertive.activated {
+    .button.button-assertive.active, #board .button.active.cell.current, .button.button-assertive.activated, #board .button.activated.cell.current {
       border-color: #e42112;
       background-color: #e42112;
       box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.1); }
-    .button.button-assertive.button-clear {
+    .button.button-assertive.button-clear, #board .button.button-clear.cell.current {
       border-color: transparent;
       background: none;
       box-shadow: none;
       color: #ef473a; }
-    .button.button-assertive.button-icon {
+    .button.button-assertive.button-icon, #board .button.button-icon.cell.current {
       border-color: transparent;
       background: none; }
-    .button.button-assertive.button-outline {
+    .button.button-assertive.button-outline, #board .button.button-outline.cell.current {
       border-color: #ef473a;
       background: transparent;
       color: #ef473a; }
-      .button.button-assertive.button-outline.active, .button.button-assertive.button-outline.activated {
+      .button.button-assertive.button-outline.active, #board .button.button-outline.active.cell.current, .button.button-assertive.button-outline.activated, #board .button.button-outline.activated.cell.current {
         background-color: #ef473a;
         box-shadow: none;
         color: #fff; }
@@ -8084,30 +8084,30 @@ progress {
         background-color: #33cd5f;
         box-shadow: none;
         color: #fff; }
-  .button.button-energized {
+  .button.button-energized, #board .button.cell.correct {
     border-color: #e6b500;
     background-color: #ffc900;
     color: #fff; }
-    .button.button-energized:hover {
+    .button.button-energized:hover, #board .button.cell.correct:hover {
       color: #fff;
       text-decoration: none; }
-    .button.button-energized.active, .button.button-energized.activated {
+    .button.button-energized.active, #board .button.active.cell.correct, .button.button-energized.activated, #board .button.activated.cell.correct {
       border-color: #e6b500;
       background-color: #e6b500;
       box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.1); }
-    .button.button-energized.button-clear {
+    .button.button-energized.button-clear, #board .button.button-clear.cell.correct {
       border-color: transparent;
       background: none;
       box-shadow: none;
       color: #ffc900; }
-    .button.button-energized.button-icon {
+    .button.button-energized.button-icon, #board .button.button-icon.cell.correct {
       border-color: transparent;
       background: none; }
-    .button.button-energized.button-outline {
+    .button.button-energized.button-outline, #board .button.button-outline.cell.correct {
       border-color: #ffc900;
       background: transparent;
       color: #ffc900; }
-      .button.button-energized.button-outline.active, .button.button-energized.button-outline.activated {
+      .button.button-energized.button-outline.active, #board .button.button-outline.active.cell.correct, .button.button-energized.button-outline.activated, #board .button.button-outline.activated.cell.correct {
         background-color: #ffc900;
         box-shadow: none;
         color: #fff; }
@@ -9092,19 +9092,17 @@ body {
   font-size: 100px;
   margin-top: 300px; }
 
+#board_area {
+  padding: 20px 0 0 0; }
+
 #board {
   width: 300px;
   margin: 20px auto;
-  background-color: #000;
-  -webkit-transition: all linear 0.5s;
-  -moz-transition: all linear 0.5s;
-  -o-transition: all linear 0.5s;
-  transition: all linear 0.5s; }
+  background-color: #000; }
   #board .col {
     padding: 8px 5px; }
-
-.circle {
-  height: 80px;
-  width: 80px;
-  margin: 0;
-  padding: 0; }
+  #board .cell {
+    height: 80px;
+    width: 80px;
+    margin: 0;
+    padding: 0; }
