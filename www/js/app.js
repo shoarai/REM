@@ -25,29 +25,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     .state('index', {
       url: '/',
       templateUrl: 'templates/menu.html',
-      controller: function($scope, $state) {
-        $scope.level = 2;
-
-        $scope.onclickStart = function() {
-          $state.go('showing', {waitCount: $scope.level});
-        }
-      }
-    })
-    .state('board', {
-      url: '/board',
-      template: '<p id="count_down">{{countDown}}</p>',
-      controller: function($scope, $interval, $state) {
-        $scope.countDown = 3;
-        var countId = $interval(function() {
-          if ($scope.countDown <= 1) {
-            $interval.cancel(countId);
-            // var waitCount = 3
-            // $state.go('showing', {waitCount: waitCount});
-            $state.go('showing');
-          }
-          $scope.countDown--;
-        }, 600);
-      }
+      controller: 'MenuCtrl'
     })
     .state('showing', {
       url: '/showing:waitCount',

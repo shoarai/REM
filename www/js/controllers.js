@@ -1,17 +1,40 @@
-angular.module('starter.controllers', [])
+angular.module('starter.controllers', ['ngStorage'])
 
-.controller('BoardCtrl', function($scope, $stateParams, $state, $timeout, $interval, boardManager) {
+.controller('MenuCtrl', function($scope, $state, $localStorage) {
+  // $localStorage.$reset();
+
+  $scope.$storage = $localStorage.$default({
+    current: { level: 1 },
+    levels: [{ point: 0 }, { point: 0 }]
+  });
+
+  var levels = $scope.$storage.levels;
+
+  if (levels[levels.length - 1].point >= 20) {
+    levels.push({ point: 0 })
+  }
+
+  $scope.onclickStart = function() {
+    $state.go('showing', {waitCount: $scope.$storage.current.level});
+  }
+})
+
+.controller('BoardCtrl', function($scope, $stateParams, $state, $localStorage, $timeout, $interval, BoardManager) {
+  $scope.$storage = $localStorage;
+
+  var level = $stateParams.waitCount | 0;
+
   $scope.waitCount = $stateParams.waitCount | 0;
   $scope.point = 0;
 
   $scope.isEnd = false;
 
-  boardManager.init($scope.waitCount + 1);
+  BoardManager.init($scope.waitCount + 1);
 
   var calcIndex = function() {
-    boardManager.calcIndex();
-    $scope.currentIndex = boardManager.getCurrentIndex();
-    $scope.correctIndex = boardManager.getCorrectIndex();
+    BoardManager.calcIndex();
+    $scope.currentIndex = BoardManager.getCurrentIndex();
+    $scope.correctIndex = BoardManager.getCorrectIndex();
   };
 
   $scope.selectedIndex = -1;
@@ -42,6 +65,10 @@ angular.module('starter.controllers', [])
     if ($scope.selectedIndex === $scope.correctIndex) {
       $scope.selectedIndex = -1;
       $scope.point++;
+      var oldLevel = $scope.$storage.levels[level];
+      if ($scope.point > oldLevel.point) {
+        oldLevel.point = $scope.point;
+      }
       calcIndex();
     } else {
       $scope.isEnd = true;

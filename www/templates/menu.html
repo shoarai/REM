@@ -7,6 +7,9 @@
 
 <div class="item range range-positive">
   <span>Level</span>
-  <input type="range" name="volume" min="0" max="3" value="1" ng-model="level">
-  <span>{{level}}</span>
+  <input type="range" name="level" min="1" max="{{$storage.levels.length - 1}}" ng-model="$storage.current.level">
+  <span>{{$storage.current.level}}</span>
 </div>
+
+<p>Point</p>
+<p>{{$storage.levels[$storage.current.level].point}}</p>

@@ -1,6 +1,10 @@
 angular.module('starter')
 
-.service('boardManager', function() {
+// .service('StorageManager', function() {
+//
+// })
+
+.service('BoardManager', function() {
   var maxIndex = 8;
   var queLength = 0;
   var indexQue = [];
