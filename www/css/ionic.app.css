@@ -9089,13 +9089,13 @@ body {
  * Menu
  */
 #menu_title {
-  margin: 100px 0 0 0; }
+  margin: 90px 0 0 0; }
 
-#menu_area p {
-  font-size: 24px; }
-
-#menu_area .level_val {
-  margin: 0 0 0 15px; }
+#level_label_area {
+  margin: 0 80px;
+  font-size: 25px; }
+  #level_label_area .row {
+    margin: 2px 0 0 0; }
 
 #start {
   width: 90px;
@@ -9103,9 +9103,17 @@ body {
   margin: 50px 0; }
 
 #level_area {
-  padding: 0 60px;
+  margin: 0 40px;
   border: none; }
 
+#level_input::-webkit-slider-thumb {
+  box-shadow: none;
+  background-color: #387ef5;
+  border-radius: 0px; }
+
+/**
+ * board
+ */
 #board_area {
   padding: 20px 0 0 0; }
   #board_area h2 {
@@ -9113,9 +9121,9 @@ body {
   #board_area p {
     font-size: 24px; }
 
-/**
- * board
- */
+#board_label_area {
+  margin: 10px 0; }
+
 #board {
   width: 300px;
   margin: 20px auto;
@@ -9127,4 +9135,9 @@ body {
     width: 80px;
     margin: 0;
     padding: 0;
+    font-size: 25px;
+    line-height: 30px;
     transition: all linear 0.1s; }
+
+#board_buttons {
+  margin: 0 30px; }

@@ -2,18 +2,20 @@
 <div id="menu_area">
   <h1 id="menu_title">COMPOSITION</h1>
 
-  <!-- <button class="button button-assertive" ui-sref="showing({waitCount:{{level}}})">はじめる</button> -->
   <button id="start" class="button button-assertive" ng-click="onclickStart()">はじめる</button>
 
-  <p>Level <span class="level_val">{{$storage.current.level}}</span></p>
-  <p>Score<span class="level_val">{{$storage.levels[$storage.current.level].score}}</span></p>
-  <!-- <div id="score_area">
-    <p>Score</p>
-    <p id="score_val">{{$storage.levels[$storage.current.level].score}}</p>
-  </div> -->
+  <div id="level_label_area">
+    <div class="row">
+      <div class="col">Level</div>
+      <div class="col">{{$storage.current.level}}</div>
+    </div>
+    <div class="row">
+      <div class="col">Score</div>
+      <div class="col">{{$storage.levels[$storage.current.level].score}}</div>
+    </div>
+  </div>
+
   <div id="level_area" class="item range range-positive" ng-show="$storage.levels.length - 1 > 1">
-    <!-- <span>1</span> -->
-    <input type="range" name="level" min="1" max="{{$storage.levels.length - 1}}" ng-model="$storage.current.level">
-    <!-- <span>{{$storage.levels.length - 1}}</span> -->
+    <input id="level_input" type="range" name="level" min="1" max="{{$storage.levels.length - 1}}" ng-model="$storage.current.level">
   </div>
 </div>

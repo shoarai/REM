@@ -115,19 +115,21 @@ angular.module('starter.controllers', ['ngStorage'])
         //   });
       });
 
-      // scope.$watch('isEnd', function() {
-      //   if (!scope.isEnd) { return; }
-      //
-      //   var buttons = element.find('button');
-      //   angular.element(buttons[scope.selectedIndex]).text('Menu')
-      //     .on('click', function() {
-      //       scope.$state.go('index');
-      //     });
-      //   angular.element(buttons[scope.currentIndex]).text('Retry')
-      //     .on('click', function() {
-      //       scope.$state.reload();
-      //     });
-      // });
+      scope.$watch('isEnd', function() {
+        if (!scope.isEnd) { return; }
+
+        var buttons = element.find('button');
+        angular.element(buttons[scope.correctIndex]).text('Game Over');
+        
+        // angular.element(buttons[scope.selectedIndex]).text('Menu')
+        //   .on('click', function() {
+        //     scope.$state.go('index');
+        //   });
+        // angular.element(buttons[scope.currentIndex]).text('Retry')
+        //   .on('click', function() {
+        //     scope.$state.reload();
+        //   });
+      });
     }
   };
 })
