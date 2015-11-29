@@ -26,16 +26,42 @@ body {
   text-align: center;
 }
 
-
-// Menu
+/**
+ * Menu
+ */
 #menu_title {
-  margin-top: 100px;
+  margin: 100px 0 0 0;
+  // transition: all linear 0.1s;
+  //
+  // &.ng-hide-remove {
+  //   margin-top: -400px;
+  // }
+  // &.ng-hide-add {
+  //   margin-top: -400px;
+  // }
 }
 
-// Count down
-#count_down {
-  font-size: 100px;
-  margin-top: 300px;
+#menu_area {
+  p {
+    font-size: 24px;
+  }
+
+  .level_val {
+    margin: 0 0 0 15px;
+    // font-size: 30px;
+    // font-family: "arial";
+  }
+}
+
+#start {
+  width: 90px;
+  height: 90px;
+  margin: 50px 0;
+}
+
+#level_area {
+  padding: 0 60px;
+  border: none;
 }
 
 #board_area {
@@ -46,11 +72,13 @@ body {
   }
 
   p {
-    font-size: 20px;
+    font-size: 24px;
   }
 }
 
-// board
+/**
+ * board
+ */
 #board {
   // display: table-cell;
   width: 300px;
@@ -70,13 +98,14 @@ body {
     // -webkit-transition:all linear 0.5s;
     // -moz-transition:all linear 0.5s;
     // -o-transition:all linear 0.5s;
-    transition:all linear 0.1s;
+    transition: all linear 0.1s;
 
     &.current {
       @extend .button-assertive;
     }
 
     &.correct {
+      // DEBUG: Color correct cell
       // @extend .button-energized;
     }
 

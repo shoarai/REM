@@ -5,13 +5,13 @@ angular.module('starter.controllers', ['ngStorage'])
 
   $scope.$storage = $localStorage.$default({
     current: { level: 1 },
-    levels: [{ point: 0 }, { point: 0 }]
+    levels: [{ score: 0 }, { score: 0 }]
   });
 
   var levels = $scope.$storage.levels;
 
-  if (levels[levels.length - 1].point >= 20) {
-    levels.push({ point: 0 })
+  if (levels[levels.length - 1].score >= 20) {
+    levels.push({ score: 0 })
   }
 
   $scope.onclickStart = function() {
@@ -21,11 +21,12 @@ angular.module('starter.controllers', ['ngStorage'])
 
 .controller('BoardCtrl', function($scope, $stateParams, $state, $localStorage, $timeout, $interval, BoardManager) {
   $scope.$storage = $localStorage;
+  $scope.$state = $state;
 
   var level = $stateParams.waitCount | 0;
 
   $scope.waitCount = $stateParams.waitCount | 0;
-  $scope.point = 0;
+  $scope.score = 0;
 
   $scope.isEnd = false;
 
@@ -54,7 +55,7 @@ angular.module('starter.controllers', ['ngStorage'])
   };
 
   $interval(function() {
-    if ($scope.isEnd) { return; };
+    if ($scope.isEnd) { return; }
 
     if ($scope.waitCount > 0) {
       $scope.waitCount--;
@@ -64,10 +65,10 @@ angular.module('starter.controllers', ['ngStorage'])
 
     if ($scope.selectedIndex === $scope.correctIndex) {
       $scope.selectedIndex = -1;
-      $scope.point++;
+      $scope.score++;
       var oldLevel = $scope.$storage.levels[level];
-      if ($scope.point > oldLevel.point) {
-        oldLevel.point = $scope.point;
+      if ($scope.score > oldLevel.score) {
+        oldLevel.score = $scope.score;
       }
       calcIndex();
     } else {
@@ -106,7 +107,27 @@ angular.module('starter.controllers', ['ngStorage'])
         var buttons = element.find('button');
         // angular.element(buttons).removeClass('selected');
         angular.element(buttons[scope.selectedIndex]).addClass('selected');
+
+        // if (!scope.isEnd) { return; }
+        // angular.element(buttons[scope.selectedIndex]).text('Menu')
+        //   .on('click', function() {
+        //     scope.$state.go('index');
+        //   });
       });
+
+      // scope.$watch('isEnd', function() {
+      //   if (!scope.isEnd) { return; }
+      //
+      //   var buttons = element.find('button');
+      //   angular.element(buttons[scope.selectedIndex]).text('Menu')
+      //     .on('click', function() {
+      //       scope.$state.go('index');
+      //     });
+      //   angular.element(buttons[scope.currentIndex]).text('Retry')
+      //     .on('click', function() {
+      //       scope.$state.reload();
+      //     });
+      // });
     }
   };
 })

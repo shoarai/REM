@@ -9085,20 +9085,37 @@ a.button {
 body {
   text-align: center; }
 
+/**
+ * Menu
+ */
 #menu_title {
-  margin-top: 100px; }
+  margin: 100px 0 0 0; }
 
-#count_down {
-  font-size: 100px;
-  margin-top: 300px; }
+#menu_area p {
+  font-size: 24px; }
+
+#menu_area .level_val {
+  margin: 0 0 0 15px; }
+
+#start {
+  width: 90px;
+  height: 90px;
+  margin: 50px 0; }
+
+#level_area {
+  padding: 0 60px;
+  border: none; }
 
 #board_area {
   padding: 20px 0 0 0; }
   #board_area h2 {
     margin: 0; }
   #board_area p {
-    font-size: 20px; }
+    font-size: 24px; }
 
+/**
+ * board
+ */
 #board {
   width: 300px;
   margin: 20px auto;
