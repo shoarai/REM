@@ -1,4 +1,4 @@
-angular.module('starter.controllers', ['ngStorage'])
+angular.module('starter.controllers', ['ngStorage', 'ngCordova'])
 
 .controller('MenuCtrl', function($scope, $state, $localStorage) {
   // $localStorage.$reset();
@@ -19,7 +19,13 @@ angular.module('starter.controllers', ['ngStorage'])
   }
 })
 
-.controller('BoardCtrl', function($scope, $stateParams, $state, $localStorage, $timeout, $interval, BoardManager) {
+.controller('BoardCtrl', function(
+  $scope, $stateParams, $state, $timeout, $interval,
+  $localStorage, $cordovaMedia, $cordovaNativeAudio,
+  BoardManager, AudioManager) {
+
+  var boardInterval = 650;
+
   $scope.$storage = $localStorage;
   $scope.$state = $state;
 
@@ -31,11 +37,18 @@ angular.module('starter.controllers', ['ngStorage'])
   $scope.isEnd = false;
 
   BoardManager.init($scope.waitCount + 1);
+  AudioManager.init($cordovaMedia);
 
   var calcIndex = function() {
     BoardManager.calcIndex();
     $scope.currentIndex = BoardManager.getCurrentIndex();
     $scope.correctIndex = BoardManager.getCorrectIndex();
+
+    if ($scope.waitCount > 0) {
+      AudioManager.playRoutine();
+    } else {
+      AudioManager.playWait();      
+    }
   };
 
   $scope.selectedIndex = -1;
@@ -73,8 +86,9 @@ angular.module('starter.controllers', ['ngStorage'])
       calcIndex();
     } else {
       $scope.isEnd = true;
+      AudioManager.playEnd();
     }
-  }, 650);
+  }, boardInterval);
 
   calcIndex();
 })
@@ -120,7 +134,7 @@ angular.module('starter.controllers', ['ngStorage'])
 
         var buttons = element.find('button');
         angular.element(buttons[scope.correctIndex]).text('Game Over');
-        
+
         // angular.element(buttons[scope.selectedIndex]).text('Menu')
         //   .on('click', function() {
         //     scope.$state.go('index');
