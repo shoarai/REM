@@ -37,16 +37,32 @@ angular.module('starter')
 })
 
 .service('AudioManager', function() {
+  var dir = 'audio/';
+  var waitSrc = dir + 'button04a.mp3';
+  var rotineSrc = dir + 'button03a.mp3';
+  var endSrc = dir + 'button05.mp3';
+
+  var path = (function () {
+    var str = location.pathname;
+    var i = str.lastIndexOf('/');
+    return str.substring(0,i+1);
+  }());
+
+  var createAudio = function(src, success, error) {
+    try {
+      return new Media(path + src, success, error);
+    } catch (e) {
+      return new Audio(src, success, error);
+    }
+  }
+
   var mediaStatusCallback = function(status) {
     console.log('mediaStatusCallback', status);
   };
 
-  var src = "audio/button04a.mp3";
-  var waitAudio = new Audio(src, null, null, mediaStatusCallback);
-  src = "audio/button03a.mp3";
-  var rotineAudio = new Audio(src, null, null, mediaStatusCallback);
-  src = "audio/button05.mp3";
-  var endAudio = new Audio(src, null, null, mediaStatusCallback);
+  var waitAudio = createAudio(waitSrc, null, null);
+  var rotineAudio = createAudio(rotineSrc, null, null);
+  var endAudio = createAudio(endSrc, null, null);
   var media;
   var cordova;
 

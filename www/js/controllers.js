@@ -47,7 +47,7 @@ angular.module('starter.controllers', ['ngStorage', 'ngCordova'])
     if ($scope.waitCount > 0) {
       AudioManager.playRoutine();
     } else {
-      AudioManager.playWait();      
+      AudioManager.playWait();
     }
   };
 
