@@ -1,8 +1,8 @@
 
 <div id="menu_area">
-  <h1 id="menu_title">COMPOSITION</h1>
+  <h1 id="menu_title"><img src="img/composition.png"></h1>
 
-  <button id="start" class="button button-assertive" ng-click="onclickStart()">はじめる</button>
+  <button id="start" class="button button-clear button-assertive" ng-click="onclickStart()">はじめる</button>
 
   <div id="level_label_area">
     <div class="row">
@@ -15,7 +15,7 @@
     </div>
   </div>
 
-  <div id="level_area" class="item range range-positive" ng-show="$storage.levels.length - 1 > 1">
+  <div id="level_area" class="item range" ng-show="$storage.levels.length - 1 > 1">
     <input id="level_input" type="range" name="level" min="1" max="{{$storage.levels.length - 1}}" ng-model="$storage.current.level">
   </div>
 </div>

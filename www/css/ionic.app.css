@@ -9092,15 +9092,13 @@ body {
   margin: 90px 0 0 0; }
 
 #level_label_area {
-  margin: 0 80px;
-  font-size: 25px; }
+  margin: 0 100px;
+  font-size: 22px; }
   #level_label_area .row {
     margin: 2px 0 0 0; }
 
 #start {
-  width: 90px;
-  height: 90px;
-  margin: 50px 0; }
+  margin: 20px 0; }
 
 #level_area {
   margin: 0 40px;
@@ -9108,7 +9106,8 @@ body {
 
 #level_input::-webkit-slider-thumb {
   box-shadow: none;
-  background-color: #387ef5;
+  background-color: #fff;
+  border: solid 2px #000;
   border-radius: 0px; }
 
 /**
