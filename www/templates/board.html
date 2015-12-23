@@ -1,33 +1,49 @@
 <div id="board_area">
+  <div class="bar bar-header" ng-show="isEnd">
+    <button class="button button-icon icon ion-ios-arrow-back" ui-sref="index"></button>
+  </div>
+
   <div id="board_label_area">
-    <h2 ng-show="waitCount===0">Touch!!</h2>
+    <h2 ng-show="!isEnd && waitCount===0">Touch!!</h2>
+    <h2 ng-show="isEnd">Game Over</h2>
     <h2 ng-hide="waitCount>0">{{score}}</h2>
     <h2 ng-show="waitCount>0">Wait</h2>
     <h2 ng-show="waitCount>0">{{waitCount}}</h2>
   </div>
 
-  <div id="board" class="card" board>
-    <div class="row">
-      <div class="col"><button class="button cell" ng-click="onclickCell(0)"></button></div>
-      <div class="col"><button class="button cell" ng-click="onclickCell(1)"></button></div>
-      <div class="col"><button class="button cell" ng-click="onclickCell(2)"></button></div>
-    </div>
-    <div class="row">
-      <div class="col"><button class="button cell" ng-click="onclickCell(3)"></button></div>
-      <div class="col"><button class="button cell" ng-click="onclickCell(4)"></button></div>
-      <div class="col"><button class="button cell" ng-click="onclickCell(5)"></button></div>
-    </div>
-    <div class="row">
-      <div class="col"><button class="button cell" ng-click="onclickCell(6)"></button></div>
-      <div class="col"><button class="button cell" ng-click="onclickCell(7)"></button></div>
-      <div class="col"><button class="button cell" ng-click="onclickCell(8)"></button></div>
+  <div class="square-wrapper">
+    <div class="spacer">
+      <div id="board" class="content card" board>
+        <div class="row">
+          <div class="col"><button class="button cell" ng-click="onclickCell(0)"></button></div>
+          <div class="col"><button class="button cell" ng-click="onclickCell(1)"></button></div>
+          <div class="col"><button class="button cell" ng-click="onclickCell(2)"></button></div>
+        </div>
+        <div class="row">
+          <div class="col"><button class="button cell" ng-click="onclickCell(3)"></button></div>
+          <div class="col"><button class="button cell" ng-click="onclickCell(4)"></button></div>
+          <div class="col"><button class="button cell" ng-click="onclickCell(5)"></button></div>
+        </div>
+        <div class="row">
+          <div class="col"><button class="button cell" ng-click="onclickCell(6)"></button></div>
+          <div class="col"><button class="button cell" ng-click="onclickCell(7)"></button></div>
+          <div class="col"><button class="button cell" ng-click="onclickCell(8)"></button></div>
+        </div>
+      </div>
     </div>
   </div>
 
-  <div id="board_buttons" ng-show="isEnd">
+  <div ng-show="isEnd">
+    <button class="button button-clear button-assertive" ng-click="onclickRestart()">
+      もう一度
+    </button>
+  </div>
+
+  <!-- <div id="board_buttons" ng-show="isEnd">
     <div class="button-bar">
       <a class="button button-clear button-assertive" ng-click="onclickRestart()">もう一度</a>
-      <a class="button button-clear button-positive" ui-sref="index">メニューに戻る</a>
     </div>
   </div>
+  <a class="button button-clear button-assertive" ng-show="isEnd" ng-click="onclickRestart()">もう一度</a> -->
+
 </div>

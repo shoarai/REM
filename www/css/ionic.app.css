@@ -9089,16 +9089,14 @@ body {
  * Menu
  */
 #menu_title {
-  margin: 90px 0 0 0; }
+  margin: 80px 0 0 0; }
 
 #level_label_area {
   margin: 0 100px;
   font-size: 22px; }
-  #level_label_area .row {
-    margin: 2px 0 0 0; }
 
 #start {
-  margin: 20px 0; }
+  margin: 30px 0; }
 
 #level_area {
   margin: 0 40px;
@@ -9108,32 +9106,46 @@ body {
   box-shadow: none;
   background-color: #fff;
   border: solid 2px #000;
-  border-radius: 0px; }
+  border-radius: 0px;
+  margin-top: -4px; }
 
 /**
  * board
  */
 #board_area {
-  padding: 20px 0 0 0; }
+  padding: 30px 0 0 0; }
+  #board_area .bar-header {
+    background: none; }
   #board_area h2 {
     margin: 0; }
   #board_area p {
     font-size: 24px; }
 
 #board_label_area {
-  margin: 10px 0; }
+  margin: 20px 0 0 0; }
+
+.square-wrapper {
+  position: relative;
+  width: 80%;
+  margin: 10px auto;
+  padding: 28px 0 0 0; }
+
+.spacer {
+  width: 100%;
+  padding-bottom: 100%; }
+
+.content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0; }
 
 #board {
-  width: 300px;
-  margin: 20px auto;
   background-color: #000; }
-  #board .col {
-    padding: 8px 5px; }
   #board .cell {
-    height: 80px;
-    width: 80px;
-    margin: 0;
-    padding: 0;
+    width: 100%;
+    padding-bottom: 100%;
     font-size: 25px;
     line-height: 30px;
     transition: all linear 0.1s; }
