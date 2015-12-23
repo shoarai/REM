@@ -130,10 +130,12 @@ angular.module('starter.controllers', ['ngStorage', 'ngCordova'])
       });
 
       scope.$watch('isEnd', function() {
-        // if (!scope.isEnd) { return; }
+        if (!scope.isEnd) { return; }
 
-        // var buttons = element.find('button');
-        // angular.element(buttons[scope.correctIndex]).text('Game Over');
+        var buttons = element.find('button');
+      //   console.log(angular.element(buttons[scope.correctIndex]).parent().parent().parent().parent().parent().parent()
+      // .find('#restart'));
+        // angular.element(buttons[scope.correctIndex]).addClass('selected');
 
         // angular.element(buttons[scope.selectedIndex]).text('Menu')
         //   .on('click', function() {

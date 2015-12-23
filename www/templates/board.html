@@ -33,17 +33,15 @@
     </div>
   </div>
 
-  <div ng-show="isEnd">
-    <button class="button button-clear button-assertive" ng-click="onclickRestart()">
+  <button id="restart" class="button button-clear" ng-show="isEnd">
+  </button>
+
+  <div id="board_buttons">
+    <button class="button button-clear button-assertive" ng-show="isEnd" ng-click="onclickRestart()">
       もう一度
     </button>
   </div>
-
-  <!-- <div id="board_buttons" ng-show="isEnd">
-    <div class="button-bar">
-      <a class="button button-clear button-assertive" ng-click="onclickRestart()">もう一度</a>
-    </div>
-  </div>
-  <a class="button button-clear button-assertive" ng-show="isEnd" ng-click="onclickRestart()">もう一度</a> -->
-
+  <!-- <div class="button-bar" ng-show="isEnd">
+    <a class="button button-clear button-assertive" ng-click="onclickRestart()">もう一度</a>
+  </div> -->
 </div>
