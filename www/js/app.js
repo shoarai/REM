@@ -25,10 +25,11 @@ angular.module('starter', [
     prefix: 'js/lang/',
     suffix: '.json'
   });
-  
+
   var defaultLng = 'en';
   var getLang = function() {
     try {
+      // return 'en';
       return (navigator.browserLanguage || navigator.language || navigator.userLanguage).substr(0, 2)
     } catch (e) {
       return defaultLng;

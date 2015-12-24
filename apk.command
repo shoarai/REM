@@ -15,5 +15,5 @@ SIGNED_FILE=../app.apk
 
 # Build, Sign, Optimize
 cordova build --release
-jarsigner -verbose -keystore $KEY_FILE $UNSIGNED_FILE $ALIAS
+jarsigner -verbose -tsa http://timestamp.digicert.com -keystore $KEY_FILE $UNSIGNED_FILE $ALIAS
 /Applications/android-sdk-macosx/build-tools/21.1.1/zipalign -v 4 $UNSIGNED_FILE $SIGNED_FILE
