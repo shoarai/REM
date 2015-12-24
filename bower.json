@@ -1,8 +1,10 @@
 {
-  "name": "HelloIonic",
+  "name": "Composition",
   "private": "true",
   "devDependencies": {
     "ionic": "driftyco/ionic-bower#1.1.0",
-    "ngstorage": "~0.3.10"
+    "ngstorage": "~0.3.10",
+    "angular-translate": "~2.8.1",
+    "angular-translate-loader-static-files": "~2.8.1"
   }
 }

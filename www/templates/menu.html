@@ -1,15 +1,15 @@
 <div id="menu_area">
   <h1 id="menu_title"><img src="img/title_logo.png"></h1>
 
-  <button id="start" class="button button-clear button-assertive" ng-click="onclickStart()">はじめる</button>
+  <button id="start" class="button button-clear button-assertive" ng-click="onclickStart()" translate>START</button>
 
   <div id="level_label_area">
     <div class="row">
-      <div class="col">Level</div>
+      <div class="col" translate>LEVEL</div>
       <div class="col">{{$storage.current.level}}</div>
     </div>
     <div class="row">
-      <div class="col">Score</div>
+      <div class="col" translate>SCORE</div>
       <div class="col">{{$storage.levels[$storage.current.level].score}}</div>
     </div>
   </div>

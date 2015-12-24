@@ -4,10 +4,10 @@
   </div>
 
   <div id="board_label_area">
-    <h2 ng-show="!isEnd && waitCount===0">Touch!!</h2>
-    <h2 ng-show="isEnd">Game Over</h2>
+    <h2 ng-show="!isEnd && waitCount===0" translate>TOUCH</h2>
+    <h2 ng-show="isEnd" translate>GAMEOVER</h2>
     <h2 ng-hide="waitCount>0">{{score}}</h2>
-    <h2 ng-show="waitCount>0">Wait</h2>
+    <h2 ng-show="waitCount>0" translate>WAIT</h2>
     <h2 ng-show="waitCount>0">{{waitCount}}</h2>
   </div>
 
@@ -37,8 +37,8 @@
   </button>
 
   <div id="board_buttons">
-    <button class="button button-clear button-assertive" ng-show="isEnd" ng-click="onclickRestart()">
-      もう一度
+    <button class="button button-clear button-assertive" ng-show="isEnd" ng-click="onclickRestart()" translate>
+      RESTART
     </button>
   </div>
   <!-- <div class="button-bar" ng-show="isEnd">
