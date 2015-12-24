@@ -25,8 +25,17 @@ angular.module('starter', [
     prefix: 'js/lang/',
     suffix: '.json'
   });
-
-  $translateProvider.preferredLanguage('ja');
+  
+  var defaultLng = 'en';
+  var getLang = function() {
+    try {
+      return (navigator.browserLanguage || navigator.language || navigator.userLanguage).substr(0, 2)
+    } catch (e) {
+      return defaultLng;
+    }
+  }
+  $translateProvider.preferredLanguage(getLang());
+  $translateProvider.fallbackLanguage(defaultLng);
 })
 
 .config(function($stateProvider, $urlRouterProvider) {
